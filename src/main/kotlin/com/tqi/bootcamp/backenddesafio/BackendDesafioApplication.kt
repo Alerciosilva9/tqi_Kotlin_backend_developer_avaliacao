@@ -1,4 +1,4 @@
-package com.tqi.bootcam.backenddesafio
+package com.tqi.bootcamp.backenddesafio
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
