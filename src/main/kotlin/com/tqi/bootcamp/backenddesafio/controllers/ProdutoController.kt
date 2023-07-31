@@ -1,33 +1,35 @@
 package com.tqi.bootcamp.backenddesafio.controllers
 
-
 import com.tqi.bootcamp.backenddesafio.dtos.CategoriaDto
+import com.tqi.bootcamp.backenddesafio.dtos.ProdutoDto
 import com.tqi.bootcamp.backenddesafio.entities.Categoria
-import com.tqi.bootcamp.backenddesafio.services.CategoriaService
+import com.tqi.bootcamp.backenddesafio.entities.Produto
+import com.tqi.bootcamp.backenddesafio.repositories.ProdutoRepository
+import com.tqi.bootcamp.backenddesafio.services.ProdutoService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-
 @RestController
-@RequestMapping("/categoria")
-class CategoriaController(private val service: CategoriaService) {
-    @GetMapping
-    fun buscartodos():Iterable<Categoria> {
-        return service.buscar()
-    }
+@RequestMapping("/produto")
+class ProdutoController(private val service:ProdutoService ) {
+
     @PostMapping
-    fun cadastrar(@Valid @RequestBody categoria: CategoriaDto):ResponseEntity<String> {
+    fun cadastrar(@Valid @RequestBody produto: ProdutoDto): ResponseEntity<String> {
         return try {
-            ResponseEntity.ok(service.save(categoria).toString())
+            ResponseEntity.status(HttpStatus.OK).body(service.save(produto).toString())
         }catch(e: Exception){
-            ResponseEntity.badRequest().body(e.message)
+            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.message)
         }
+    }
+
+    @GetMapping
+    fun buscarTodos():Iterable<Produto>{
+        return service.buscar()
     }
 }
