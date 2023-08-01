@@ -22,6 +22,7 @@ class CategoriaController(private val service: CategoriaService) {
     fun buscartodos():Iterable<Categoria> {
         return service.buscar()
     }
+
     @PostMapping
     fun cadastrar(@Valid @RequestBody categoria: CategoriaDto):ResponseEntity<String> {
         return try {

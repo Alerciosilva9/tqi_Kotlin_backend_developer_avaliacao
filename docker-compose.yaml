@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+  postgres1:
+    image: postgres:latest
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_DB: mercearia
+      POSTGRES_PASSWORD: 1234
+      
+  user:
+    image: loja/user-service
+    ports:
+      - "8080:8080"
+    environment:
+      POSTGRES_URL: jdbc:postgresql://dbuser:5432/mercearia
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DEFAULT_SCHEMA: mercearia
+    depends_on:
+      - postgres1
+
