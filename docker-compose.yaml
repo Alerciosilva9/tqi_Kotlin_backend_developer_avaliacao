@@ -15,7 +15,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      POSTGRES_URL: jdbc:postgresql://dbuser:5432/mercearia
+      POSTGRES_URL: jdbc:postgresql://postgres1:5432/mercearia
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 1234
       POSTGRES_DEFAULT_SCHEMA: mercearia
