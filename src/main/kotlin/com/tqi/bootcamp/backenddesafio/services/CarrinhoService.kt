@@ -27,6 +27,11 @@ class CarrinhoService(private val produtos: MutableList<ProdutoCarrinhoDto>,priv
 
     }
 
+    fun limpar():Boolean{
+        this.produtos.clear()
+        return true
+    }
+
     fun getAll():List<ProdutoCarrinhoDto>{
         return this.produtos
     }

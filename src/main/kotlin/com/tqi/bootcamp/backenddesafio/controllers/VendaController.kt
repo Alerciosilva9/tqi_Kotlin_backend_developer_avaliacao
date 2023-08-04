@@ -37,6 +37,7 @@ class VendaController(private val service:CarrinhoService) {
                 false
             }
         if(contains){
+            this.service.limpar()
             return ResponseEntity.ok().body("Compra realizada com Sucesso, debitado ".plus(total).plus(" por meio de ")
                 .plus(pagamento.forma)
             )

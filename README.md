@@ -225,7 +225,7 @@ Endpoint:
 http://localhost:8080/finalizar
 ```
 
-Usado para finalizar a compra, no corpo da requisicao, e nescessario somente o metodo de pagamento
+Usado para finalizar a compra, no corpo da requisicao, é nescessario informar somente o metodo de pagamento
 
 Método de requisição: *POST*
 

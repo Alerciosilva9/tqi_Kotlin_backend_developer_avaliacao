@@ -1,0 +1,4 @@
+[engine:junit-jupiter]/[class:com.tqi.bootcamp.backenddesafio.CategoriaControllerTest]/[method:buscar todas as categorias()]
+[engine:junit-jupiter]/[class:com.tqi.bootcamp.backenddesafio.BackendDesafioApplicationTests]/[method:contextLoads()]
+[engine:junit-jupiter]/[class:com.tqi.bootcamp.backenddesafio.ProdutoControllerTest]/[method:cadastro produtos()]
+[engine:junit-jupiter]/[class:com.tqi.bootcamp.backenddesafio.ProdutoControllerTest]/[method:buscar todos os produtos()]

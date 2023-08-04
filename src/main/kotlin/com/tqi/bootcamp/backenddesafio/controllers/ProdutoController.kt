@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController
 class ProdutoController(private val service:ProdutoService ) {
 
     @PostMapping
-    fun cadastrar(@Valid @RequestBody produto: ProdutoDto): ResponseEntity<String> {
+    fun cadastrar(@Valid @RequestBody produto: ProdutoDto): ResponseEntity<Produto> {
         return try {
-            ResponseEntity.status(HttpStatus.OK).body(service.save(produto).toString())
+            ResponseEntity.status(HttpStatus.OK).body(service.save(produto))
         }catch(e: Exception){
-            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.message)
+            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null)
         }
     }
 

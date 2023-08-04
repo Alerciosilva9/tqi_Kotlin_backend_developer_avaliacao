@@ -14,6 +14,7 @@ create table mercearia.produto(
     FOREIGN KEY (id_categoria) REFERENCES mercearia.categoria(id)
 );
 
+insert into mercearia.categoria(nome) values('Limpeza');
 
 
 

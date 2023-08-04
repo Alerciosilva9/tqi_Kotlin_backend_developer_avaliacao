@@ -24,11 +24,11 @@ class CategoriaController(private val service: CategoriaService) {
     }
 
     @PostMapping
-    fun cadastrar(@Valid @RequestBody categoria: CategoriaDto):ResponseEntity<String> {
+    fun cadastrar(@Valid @RequestBody categoria: CategoriaDto):ResponseEntity<Categoria> {
         return try {
-            ResponseEntity.ok(service.save(categoria).toString())
+            ResponseEntity.ok(service.save(categoria))
         }catch(e: Exception){
-            ResponseEntity.badRequest().body(e.message)
+            ResponseEntity.badRequest().body(null)
         }
     }
 }
